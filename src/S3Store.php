@@ -1,6 +1,6 @@
 <?php
 
-namespace Imannms\Cache;
+namespace Imannms\LaravelS3CacheDriver;
 
 use Storage;
 use Exception;
