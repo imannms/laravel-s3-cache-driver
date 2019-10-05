@@ -188,10 +188,6 @@ class S3Store implements Store
      */
     public function flush()
     {
-        if (! $this->files->isDirectory($this->directory)) {
-            return false;
-        }
-
         foreach ($this->files->directories($this->directory) as $directory) {
             if (! $this->files->deleteDirectory($directory)) {
                 return false;
