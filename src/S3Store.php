@@ -63,11 +63,11 @@ class S3Store implements Store
      * @param  array  $keys
      * @return array
      */
-    public function many($arrayKey)
+    public function many(array $keys)
     {
 		$items = [];
 		
-        foreach($arrayKey as $key)
+        foreach($keys as $key)
 		{
 			$items[] = $this->get($key);
 		}
@@ -101,9 +101,9 @@ class S3Store implements Store
      * @param  int  $seconds
      * @return bool
      */
-    public function putMany($arrayKey, $value, $seconds)
+    public function putMany(array $values, $seconds)
     {
-        foreach($arrayKey as $key)
+        foreach($values as $key => $value)
 		{
 			$this->put($key, $value, $seconds);
 		}
