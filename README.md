@@ -2,9 +2,12 @@ Laravel S3 cache driver for Laravel 5. Support: Amazon S3, Digital Ocean Spaces,
 
 The repository is originally forked from `Illuminate\Cache\FileStore`.
 
-The advantages of using S3 is because S3 have an **unlimited storage** or **big storage**. You can cache everything without worried about your storage capacity. And it's cheap.
+The advantages of using S3:
+- S3 have an **unlimited storage** or **big storage**. 
+- You can cache everything without worried about running out of storage capacity. 
+- It's cheap!
 
-Redis, Memcached, and almost others laravel default cache store have a limited storage.
+Note: Redis, Memcached, and almost others laravel default cache store have a limited storage.
 
 ---
 
