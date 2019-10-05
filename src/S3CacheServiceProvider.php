@@ -31,7 +31,7 @@ class S3CacheServiceProvider extends ServiceProvider
 	public function boot()
 	{				
 		Cache::extend('s3', function($app, $config){
-			return Cache::repository(new S3Store($config));
+			return Cache::repository(new S3Store($app, $config));
 		});
 	}
 }
