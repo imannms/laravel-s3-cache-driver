@@ -11,13 +11,16 @@ Redis, Memcached, and almost others laravel default cache store have a limited s
 #How to install
 
 1. `composer require imannms/laravel-s3-cache-driver`
-2. edit `config/cache.php` with the config template bellow. Then, run `php artisan config:cache`
+2. edit `config/cache.php` with the config template bellow. Then, run `php artisan config:cache`.
 
 Please choose one.
 
 Amazon S3 config template.
 ```php
-
+	'stores' => [
+		
+		// other stores
+		
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -27,12 +30,15 @@ Amazon S3 config template.
             'url' => env('AWS_URL'),
 			'path' => env('AWS_PATH', 'cache'), // cache root directory, you can change it to suit your need
         ],
-
+	]
 ```
 
 Digital Ocean Spaces config template.
 ```php
-
+	'stores' => [
+	
+		// other stores
+	
 		'do_spaces' => [
 			'driver' => 's3',
 			'key' => env('DO_SPACES_KEY'),
@@ -42,7 +48,7 @@ Digital Ocean Spaces config template.
 			'endpoint' => env('DO_SPACES_ENDPOINT'),
 			'path' => env('DO_SPACES_PATH', 'cache'), // cache root directory, you can change it to suit your need
 		],
-
+	]
 ```
 
 ===
