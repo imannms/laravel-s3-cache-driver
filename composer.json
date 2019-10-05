@@ -1,0 +1,48 @@
+{
+    "name": "imannms/laravel-s3-cache-driver",
+    "description": "Laravel S3 cache driver. Support: Amazon S3, Digital Ocean Space, etc.",
+    "version": "1.0.0",
+    "homepage": "https://github.com/imannms/laravel-s3-cache-driver",
+    "keywords":
+    [
+		"laravel",
+        "laravel cache driver",
+		"s3",
+		"amazon s3",
+		"digital ocean space"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "imannms",
+            "email": "socialtrens@gmail.com",
+            "homepage": "https://github.com/imannms",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "laravel/framework": "5.8.*",
+		"league/flysystem-aws-s3-v3": "^1.0",
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.1|^7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Imannms\\LaravelS3CacheDriver\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+	"extra": {
+	}
+}
