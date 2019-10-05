@@ -6,6 +6,7 @@ use Storage;
 use Exception;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\InteractsWithTime;
+use Illuminate\Filesystem\FilesystemManager;
 
 class S3Store implements Store
 {
@@ -39,9 +40,11 @@ class S3Store implements Store
      * @param  string  $directory
      * @return void
      */
-    public function __construct()
+    public function __construct($config)
     {
-        $this->files = Storage::disk($this->disk);
+        // $this->files = Storage::disk($this->disk);
+		$filesystemManager = new FilesystemManager();
+		$this->files = $filesystemManager->createS3Driver($config);
     }
 
     /**
@@ -110,19 +113,6 @@ class S3Store implements Store
 		
 		return true;
     }
-
-    /**
-     * Create the file cache directory if necessary.
-     *
-     * @param  string  $path
-     * @return void
-     */
-    // protected function ensureCacheDirectoryExists($path)
-    // {
-        // if (! $this->files->exists(dirname($path))) {
-            // $this->files->makeDirectory(dirname($path), 0777, true, true);
-        // }
-    // }
 
     /**
      * Increment the value of an item in the cache.
