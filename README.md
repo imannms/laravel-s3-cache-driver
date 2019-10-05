@@ -15,26 +15,28 @@ Redis, Memcached, and almost others laravel default cache store have a limited s
 
 Please choose one.
 
-Amazon S3 config template.
+**Amazon S3** config template.
+
 ```php
 	
 	'stores' => [
-		
+	
 		// other stores
-		
-        's3' => [
-            'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
-            'url' => env('AWS_URL'),
+	
+		'do_spaces' => [
+			'driver' => 's3',
+			'key' => env('AWS_ACCESS_KEY_ID'),
+			'secret' => env('AWS_SECRET_ACCESS_KEY'),
+			'region' => env('AWS_DEFAULT_REGION'),
+			'bucket' => env('AWS_BUCKET'),
+			'url' => env('AWS_URL'),
 			'path' => env('AWS_PATH', 'cache'), // cache root directory, you can change it to suit your need
-        ],
+		],
 	]
+	
 ```
 
-Digital Ocean Spaces config template.
+**Digital Ocean Spaces** config template.
 ```php
 	
 	'stores' => [
@@ -51,6 +53,7 @@ Digital Ocean Spaces config template.
 			'path' => env('DO_SPACES_PATH', 'cache'), // cache root directory, you can change it to suit your need
 		],
 	]
+	
 ```
 
 ---
