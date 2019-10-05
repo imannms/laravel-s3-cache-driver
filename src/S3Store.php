@@ -38,7 +38,7 @@ class S3Store implements Store
 		$filesystemManager = new FilesystemManager($app);
 		$this->files = $filesystemManager->createS3Driver($config);
 		
-		// if(!empty($config['path']))
+		if(!empty($config['path']))
 			$this->directory = $config['path'];
     }
 
