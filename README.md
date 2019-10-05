@@ -1,4 +1,4 @@
-Laravel S3 cache driver for Laravel 5. Support: Amazon S3, Digital Ocean Spaces, etc.
+S3 cache driver for Laravel 5 and 6. Support: Amazon S3, Digital Ocean Spaces, etc.
 
 The repository is originally forked from `Illuminate\Cache\FileStore`.
 
