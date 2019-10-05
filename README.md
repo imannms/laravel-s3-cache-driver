@@ -1,4 +1,4 @@
-Laravel S3 cache driver for Laravel 5.8+. Support: Amazon S3, Digital Ocean Spaces, etc.
+Laravel S3 cache driver for Laravel 5. Support: Amazon S3, Digital Ocean Spaces, etc.
 
 The repository is originally forked from `Illuminate\Cache\FileStore`.
 
@@ -10,8 +10,27 @@ Redis, Memcached, and almost others laravel default cache store have a limited s
 
 # How to install
 
-1. `composer require imannms/laravel-s3-cache-driver`
-2. edit `config/cache.php` with the config template bellow. Then, run `php artisan config:cache`.
+## Install using composer
+`composer require imannms/laravel-s3-cache-driver`
+
+
+### For Laravel 5.5+
+Nothing is needed, package auto-discovery will work.
+
+### For Laravel 5.2+
+
+Add to `config/app.php`.
+```php
+
+	/*
+	 * Package Service Providers...
+	 */
+	Imannms\LaravelS3CacheDriver\S3CacheServiceProvider::class,
+
+```
+
+## Add config
+Add to `config/cache.php` with the config template bellow.
 
 Please choose one.
 
@@ -55,6 +74,9 @@ Please choose one.
 	]
 	
 ```
+
+## Finally
+Run `php artisan config:cache`.
 
 ---
 
