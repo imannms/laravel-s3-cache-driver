@@ -40,10 +40,10 @@ class S3Store implements Store
      * @param  string  $directory
      * @return void
      */
-    public function __construct($config)
+    public function __construct($app, $config)
     {
         // $this->files = Storage::disk($this->disk);
-		$filesystemManager = new FilesystemManager();
+		$filesystemManager = new FilesystemManager($app);
 		$this->files = $filesystemManager->createS3Driver($config);
     }
 
