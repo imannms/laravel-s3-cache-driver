@@ -56,10 +56,12 @@ class S3Store implements Store
     }
 
     /**
-     * Retrieve an item from the cache by key.
+     * Retrieve multiple items from the cache by key.
      *
-     * @param  string|array  $key
-     * @return mixed
+     * Items not found in the cache will have a null value.
+     *
+     * @param  array  $keys
+     * @return array
      */
     public function many($arrayKey)
     {
@@ -92,22 +94,21 @@ class S3Store implements Store
         return $result !== false && $result > 0;
     }
 
-	/**
-     * Retrieve an item from the cache by key.
+    /**
+     * Store multiple items in the cache for a given number of $seconds.
      *
-     * @param  string|array  $key
-     * @return mixed
+     * @param  array  $values
+     * @param  int  $seconds
+     * @return bool
      */
     public function putMany($arrayKey, $value, $seconds)
     {
-		$items = [];
-		
         foreach($arrayKey as $key)
 		{
-			$items[] = $this->put($key, $value, $seconds);
+			$this->put($key, $value, $seconds);
 		}
 		
-		return $items;
+		return true;
     }
 
     /**
