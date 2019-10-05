@@ -44,5 +44,10 @@
         "sort-packages": true
     },
 	"extra": {
+		"laravel": {
+			"providers": [
+				"Imannms\\LaravelS3CacheDriver\\S3CacheServiceProvider"
+			]
+		}
 	}
 }
