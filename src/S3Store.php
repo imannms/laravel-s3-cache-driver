@@ -13,21 +13,14 @@ class S3Store implements Store
     use InteractsWithTime;
 
     /**
-     * The Storage instance.
+     * The Filesystem instance.
      *
      * @var \Storage
      */
     protected $files;
 
     /**
-     * The S3 disk name.
-     *
-     * @var string
-     */
-    protected $disk = 's3_cache_store';
-
-    /**
-     * The S3 directory.
+     * The root directory.
      *
      * @var string
      */
@@ -42,9 +35,11 @@ class S3Store implements Store
      */
     public function __construct($app, $config)
     {
-        // $this->files = Storage::disk($this->disk);
 		$filesystemManager = new FilesystemManager($app);
 		$this->files = $filesystemManager->createS3Driver($config);
+		
+		if(!empty($config['path']))
+			$this->directory = $config['path'];
     }
 
     /**
