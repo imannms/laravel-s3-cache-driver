@@ -13,7 +13,7 @@ class S3CacheServiceProvider extends ServiceProvider
      *
      * @var bool
      */
-    protected $defer = true;
+    // protected $defer = true;
     /**
      * Register any application services.
      *
