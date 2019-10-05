@@ -6,9 +6,9 @@ The advantages of using S3 is because S3 have an **unlimited storage** or **big 
 
 Redis, Memcached, and almost others laravel default cache store have a limited storage.
 
-===
+---
 
-#How to install
+# How to install
 
 1. `composer require imannms/laravel-s3-cache-driver`
 2. edit `config/cache.php` with the config template bellow. Then, run `php artisan config:cache`.
@@ -17,6 +17,7 @@ Please choose one.
 
 Amazon S3 config template.
 ```php
+	
 	'stores' => [
 		
 		// other stores
@@ -35,6 +36,7 @@ Amazon S3 config template.
 
 Digital Ocean Spaces config template.
 ```php
+	
 	'stores' => [
 	
 		// other stores
@@ -51,11 +53,12 @@ Digital Ocean Spaces config template.
 	]
 ```
 
-===
+---
 
-#How to use
+# How to use
 
 ```php
+
 use Cache;
 
 Cache::store('s3')->put('key', 'value', 60*5);
@@ -63,7 +66,7 @@ Cache::store('s3')->get('key');
 
 ```
 
-===
-#Recommendation
+---
+# Recommendation
 
 Enable CDN on your cloud storage for faster speed.
