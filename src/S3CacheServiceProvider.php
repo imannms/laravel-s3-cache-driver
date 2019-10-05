@@ -4,7 +4,6 @@ namespace Imannms\LaravelS3CacheDriver;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Contracts\Cache\Repository;
 
 class S3CacheServiceProvider extends ServiceProvider
 {
@@ -32,7 +31,7 @@ class S3CacheServiceProvider extends ServiceProvider
 	public function boot()
 	{				
 		Cache::extend('s3', function($app){
-			return new Repository(new S3Store);
+			return Cache::repository(new S3Store);
 		});
 	}
 }
