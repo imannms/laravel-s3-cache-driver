@@ -160,8 +160,6 @@ class S3Store implements Store
         if ($this->files->exists($file = $this->path($key))) {
             return $this->files->delete($file);
         }
-		
-		if($this->files->delete())
 
         return false;
     }
